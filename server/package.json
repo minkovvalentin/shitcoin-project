@@ -1,0 +1,31 @@
+{
+  "name": "reddit-scrapbot-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/minkovvalentin/reddit-scrapbot-server.git"
+  },
+  "author": "valentin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/minkovvalentin/reddit-scrapbot-server/issues"
+  },
+  "homepage": "https://github.com/minkovvalentin/reddit-scrapbot-server#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "mongoose": "^5.12.10",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.7",
+    "puppeteer": "^9.1.1",
+    "snoowrap": "^1.23.0",
+    "uuid": "^8.3.2"
+  }
+}

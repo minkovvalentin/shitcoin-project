@@ -1,0 +1,10 @@
+.container {
+  background-color: #393e46;
+  padding: 20px 50px;
+}
+
+.slider-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+}
