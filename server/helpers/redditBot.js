@@ -1,16 +1,16 @@
 /* Imports */
 const snoowrap = require('snoowrap');
-const config = require('../config/config');
+const {config:{userAgent,clientId, clientSecret, refreshToken}} = require('../config/config');
 
 /* Consts */
 const SUBREDDIT_URL = (reddit) => `https://old.reddit.com/r/${reddit}`;
 
 /* Initialize reddit api */
 const redditApi = new snoowrap({
-  userAgent: config.userAgent,
-  clientId: config.clientId,
-  clientSecret: config.clientSecret,
-  refreshToken: config.refreshToken
+  userAgent: userAgent,
+  clientId: clientId,
+  clientSecret: clientSecret,
+  refreshToken: refreshToken
 });
 
 const redditBot = {

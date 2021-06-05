@@ -1,15 +1,15 @@
 const {
   initialize: initScraper,
   getResults
-} = require('../utils/scrape');
+} = require('../helpers/scrape');
 
 const {
  getPosts
-} = require('../utils/redditBot');
+} = require('../helpers/redditBot');
 
 const defaultsubreddit = 'CryptoMoonShots'
 
-const coinDetailService =  {
+const externalCoinService =  {
   getScrapeCoinDetails: async () => {
   
     await initScraper();
@@ -24,4 +24,4 @@ const coinDetailService =  {
   }
 }
 
-module.exports = coinDetailService
+module.exports = externalCoinService

@@ -1,6 +1,6 @@
 import styles from './styles/coinsList.module.scss'
 import { RedditCoin, CoinParam } from '../interfaces/coin'
-import { convertUnixTime } from '../utils/global';
+import { convertUnixTime } from '../services/globalService';
 import { useEffect, useState } from 'react';
 import Select from '../components/select';
 import MultiSelect from '../components/multiSelect';
@@ -179,7 +179,6 @@ const CoinsList = ({coinsData}: CoinListProps) => {
 
   const onSortIconClick = (e:any) => {
     e.preventDefault()
-    console.log('clicked')
     const newSortinDirection = sortingDirection === SortingDirectionEnum.DESCENDING ? SortingDirectionEnum.ASCENDING : SortingDirectionEnum.DESCENDING
     setSortingDirection(newSortinDirection)
     let sorted:RedditCoin[] = sortCoinsByProvidedParams(sorting,getObjParamBySortType(sorting),coinsData,sortingDirection)

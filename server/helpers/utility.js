@@ -3,11 +3,11 @@
 /* 404 - NOT FOUND */
 /*500 - INTERNAL SERVER ERRO */
 const global = {
-  serverResponse: (success, message, status) => {
+  serverResponse: (success, message, data) => {
     return {
       success: success,
       message: message,
-      status: status
+      data: data
     }  
   }
 }

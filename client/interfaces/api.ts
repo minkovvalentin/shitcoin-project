@@ -4,3 +4,6 @@ export interface ServerResponse {
   status?: string;
 }
 
+export interface LoginResponse {
+  jwt: string
+}

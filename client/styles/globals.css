@@ -22,3 +22,6 @@ a {
   flex-grow: 1;
 }
 
+.main-body {
+  margin: 20px 30px;
+}

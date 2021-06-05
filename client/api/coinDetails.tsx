@@ -1,13 +1,11 @@
 import { RedditCoin } from '../interfaces/coin';
-import { coinDetailsApi } from '../routes/routes';
+import { externalCoinDetailsApi } from '../routes/routes';
 
 const fetchCoinDetails = async (): Promise<RedditCoin[]> => {
-  const response = await fetch(coinDetailsApi);
+  const response = await fetch(externalCoinDetailsApi);
   if (!response.ok) {
     throw new Error(response.statusText);
   }
-
-  console.log(response)
 
   return await response.json().then(data => data as RedditCoin[]);
 }

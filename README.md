@@ -1,1 +1,0 @@
-# shitcoin-project

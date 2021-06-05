@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { makeUser } from '../api/user';
 import { RedditCoin } from '../interfaces/coin'
-import styles from '../styles/Register.module.css'
+import styles from '../styles/register.module.css'
 
 enum RegisterFormFieldEnum {
   USERNAME,
@@ -12,16 +12,17 @@ enum RegisterFormFieldEnum {
 
 export default function Register() {
 
-  const [email, setEmail] = useState<string>();
-  const [username, setUsername] = useState<string>();
-  const [password, setPassword] = useState<string>();
-  const [repeatPassword, setRepeatPassword] = useState<string>();
+  const [email, setEmail] = useState<string>("");
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [repeatPassword, setRepeatPassword] = useState<string>("");
   const validFill = (): boolean => Boolean(email && username && password && repeatPassword)
 
   const onRegisterClick = async (e:any) => {
     e.preventDefault()
     if(email && username && password) {
-     console.log (await makeUser(email,username,password))
+     const newUser = await makeUser(email,username,password)
+     console.log(newUser)
     }
   }
 

@@ -78,7 +78,7 @@ const Styled = ({ options }: StyledPros) => {
         color="#333"
         dropdownGap={0}
         onChange={(value) =>
-          console.log(`${value} whadup homie`)
+          console.log(`${value}  value changed`)
         }
       />
     </React.Fragment>

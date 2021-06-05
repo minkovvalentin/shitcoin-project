@@ -1,3 +1,3 @@
 import config from '../config/config.json'
 
-export const coinDetailsApi = `${config.api_endpoint}/coin-details`
+export const externalCoinDetailsApi = `${config.api_endpoint}/external-coins/coin-details`
