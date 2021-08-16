@@ -3,7 +3,7 @@ import { GlobalContext } from '../contexts/globalContext'
 import {logout} from '../services/authenticationService'
 
 interface Props {
-  style: any;
+  style?: any;
 }
 
 const LogoutButton = ({style}: Props) => { 

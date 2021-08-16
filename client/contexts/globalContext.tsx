@@ -1,6 +1,5 @@
 import { createContext } from 'react';
 import { ThemeEnum } from '../enums/theme'
-
 interface ContextProps {
   authenticated: boolean,
   updateAuthenticated: Function,

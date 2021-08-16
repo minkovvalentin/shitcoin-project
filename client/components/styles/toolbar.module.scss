@@ -18,7 +18,6 @@ $white : #eee;
 .nav-link {
   cursor: pointer;
   display: inline-block;
-  // margin: 0 $base-unit;
   text-decoration: none;
   font-size: 16px;
   font-weight: bold;
@@ -47,12 +46,5 @@ $white : #eee;
   top: 12px;
   left: 28px;
   background-color: $yellow_dark;
-  // transition-property: transform, left, background-color;
-  // transition-duration: $indicator-speed;
-  // transform-origin: 0;
-  // transform: translate3d(0, 0, 0) scaleX(0);
-  // opacity: 0;
-  // animation: fadeMeIn $indicator-speed forwards;
-  // animation-delay: $indicator-speed;
 }
 

@@ -94,7 +94,11 @@ const CoinsList = ({coinsData}: CoinListProps) => {
     updateCoins(sorted)
   }
 
-  const sortCoinsByProvidedParams = (sortType: SortEnum, objectParam: CoinParam, coins: RedditCoin[], sortingDirection: SortingDirectionEnum): RedditCoin[] => {
+  const sortCoinsByProvidedParams = (
+    sortType: SortEnum, 
+    objectParam: CoinParam, 
+    coins: RedditCoin[], 
+    sortingDirection: SortingDirectionEnum): RedditCoin[] => {
     /* If filter has already been selected, check if its ascending or descending */
     let sorted;
     if(sorting === sortType) {

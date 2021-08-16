@@ -1,47 +1,46 @@
-import style from './styles/toolbar.module.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser } from '@fortawesome/free-solid-svg-icons'
-import { useContext } from 'react'
-import { GlobalContext } from '../contexts/globalContext'
-import LogoutButton from './logoutButton'
+import style from "./styles/toolbar.module.scss";
 
-const Toolbar = () => { 
+interface ToolbarItems {
+  className?: string;
+  link?: string;
+  value?: string | JSX.Element;
+  isElement?: boolean;
+}
 
-  const { authenticated } = useContext(GlobalContext)
+const toolbarItems: ToolbarItems[] = [
+  { link: "/", className: "nav-link", value: "Home" },
+  { link: "/coins/find", className: "nav-link", value: "💩 Coins" },
+];
 
-  const getToolbarBasedOnState = () => {   
-    if (authenticated) {
+const Toolbar = () => {
+  const getToolbarFromElementsArr = (
+    toolbarItems: ToolbarItems[]
+  ): JSX.Element => {
     return (
       <>
-        <a href="/profile" className={style['nav-link']} >
-          <span>
-            <FontAwesomeIcon icon={faUser} />
-          </span>
-        </a>
-        <a href="/" className={style['nav-link']} ><span>Home</span></a>
-        <a href="/coins" className={style['nav-link']} ><span>Coins</span></a>
-        <LogoutButton style={style['nav-link']} />
+        {" "}
+        {toolbarItems.map((item) => {
+          if (item.isElement) return item.value;
+          return (
+            <a
+              href={item.link}
+              className={item.className ? style[item.className] : ""}
+            >
+              <span>{item.value}</span>
+            </a>
+          );
+        })}{" "}
       </>
-    )
-    } else {
-      return (
-        <>
-          <a href="/login" className={`${style['nav-link']} ${style['active-link']}`}><span>Login</span></a>
-          <a href="/" className={style['nav-link']} ><span>Home</span></a>
-          <a href="/coins" className={style['nav-link']} ><span>Coins</span></a>
-        </>
-      )
-    }
-  }
+    );
+  };
 
   return (
-    <div className={style.container} >
+    <div className={style.container}>
       <nav className={style["nav-container"]} suppressHydrationWarning={true}>
-        {getToolbarBasedOnState()}
+        {getToolbarFromElementsArr(toolbarItems)}
       </nav>
-      <div className={style['nav-indicator']}></div>
     </div>
   );
-}
+};
 
 export default Toolbar;

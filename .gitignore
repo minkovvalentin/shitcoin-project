@@ -26,6 +26,7 @@ client/build
 # misc
 client/.DS_Store
 client/*.pem
+/token
 
 # debug
 client/npm-debug.log*
