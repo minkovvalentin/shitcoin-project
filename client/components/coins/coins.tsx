@@ -10,15 +10,24 @@ const Coins = (props: any) => {
 
   /* Fetch coins */
   useEffect(() => {
+    let unmounted = false;
+
     const getCoins = async () => {
       /* TODO: 
         - You must  cache result somehow and not keep making server requests
         - Cancel all subscriptions and asynchronous tasks in the useEffect cleanup function
       */
       let fetchedCoins: RedditCoin[] = await fetchCoinDetails();
-      setCoins(fetchedCoins);
+      if (unmounted) {
+        setCoins(fetchedCoins);
+      }
     };
+
     getCoins();
+
+    return () => {
+      unmounted = true;
+    };
   }, []);
 
   return (

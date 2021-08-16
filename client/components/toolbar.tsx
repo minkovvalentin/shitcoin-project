@@ -18,18 +18,18 @@ const Toolbar = () => {
   ): JSX.Element => {
     return (
       <>
-        {" "}
-        {toolbarItems.map((item) => {
+        {toolbarItems.map((item, key) => {
           if (item.isElement) return item.value;
           return (
             <a
+              key={key}
               href={item.link}
               className={item.className ? style[item.className] : ""}
             >
               <span>{item.value}</span>
             </a>
           );
-        })}{" "}
+        })}
       </>
     );
   };
