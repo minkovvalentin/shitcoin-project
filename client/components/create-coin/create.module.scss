@@ -1,15 +1,30 @@
-.form {
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
-  margin-top: 30px;
-  width: 250px;
+$columnGap: 25px;
+$formBackgroundColor: hsl(220, 4%, 27%);
+$infoBackgroundColor: hsl(220, 4%, 27%);
+$borderColor: rgb(160, 157, 157);
+$containerPadding: 20px;
+
+@mixin subContainer {
+  width: calc(50% - (#{$columnGap}/ 2));
+  padding: $containerPadding;
 }
 
-.inputContainer {
+.container {
+  display: flex;
+  margin-top: 30px;
+}
+
+.form {
+  @include subContainer;
   display: flex;
   flex-direction: column;
-  row-gap: 10px;
+  margin-right: $columnGap;
+  background-color: $formBackgroundColor;
+  border: solid 1px $borderColor;
+}
+
+.infoContainer {
+  @include subContainer;
 }
 
 .button {
@@ -20,4 +35,8 @@
     opacity: 0.8;
     cursor: pointer;
   }
+}
+
+.input {
+  margin-bottom: 20px;
 }
